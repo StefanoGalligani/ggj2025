@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class TopPlayerScript : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+public class TopPlayerScript : MonoBehaviour {
+    [SerializeField] new Rigidbody2D rigidbody;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    [Range(0.1f, 10.0f)]
+    [SerializeField] float jumpForce = 1;
+
+    void Start() {}
+
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            rigidbody.AddForceY(jumpForce, ForceMode2D.Impulse);
+        }
     }
 }
