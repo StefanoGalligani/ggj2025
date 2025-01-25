@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3269f4f645ef3e849b3e28a797f2c448
+guid: 5d76cddabb517cc40a0c104e542eee02
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8237145936182211251
-    second: Corallo_0
+      213: -8316161264435561362
+    second: Bubbles_Sad_Bro__0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Corallo_0
+      name: Bubbles_Sad_Bro__0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 27
-        height: 32
+        x: 31
+        y: 65
+        width: 148
+        height: 152
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b271313698305270800000000000000
-      internalID: 8237145936182211251
+      spriteID: e6c7472146f079c80800000000000000
+      internalID: -8316161264435561362
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Corallo_0: 8237145936182211251
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
