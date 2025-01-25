@@ -6,6 +6,7 @@ public class SnailScript : MonoBehaviour
     [SerializeField] private float _velocity;
     [SerializeField] private RectTransform _movementArea;
     [SerializeField] private LineRenderer _line;
+    [SerializeField] private GameObject _cannonArea;
     private Vector2 _targetPosition;
     private AbstractBubble _currentBubble;
     private PowerupType _powerupType = PowerupType.None;
@@ -20,7 +21,7 @@ public class SnailScript : MonoBehaviour
         if (pos.x < area.position.x) return false;
         if (pos.x > area.position.x + area.localScale.x) return false;
         if (pos.y < area.position.y) return false;
-        if (pos.y > area.position.y + area.localScale.y) return false;
+        if (pos.y > area.position.y + area.localScale.y + 1) return false;
         return true;
     }
 
@@ -35,7 +36,7 @@ public class SnailScript : MonoBehaviour
                 _targetPosition = newTargetPosition;
                 if (_targetPosition.y > _movementArea.position.y + _movementArea.localScale.y) {
                     _targetPosition.y = _movementArea.position.y + _movementArea.localScale.y;
-                } 
+                }
             }
         }
         float dist = Vector3.Distance(transform.position, (Vector3)_targetPosition);
@@ -54,6 +55,7 @@ public class SnailScript : MonoBehaviour
                 _currentBubble = other.gameObject.GetComponent<PowerupScript>().powerBubble;
                 _powerupType = other.gameObject.GetComponent<PowerupScript>().powerupType;
                 Destroy(other.gameObject);
+                _cannonArea.SetActive(true);
 
                 break;
 
@@ -62,6 +64,7 @@ public class SnailScript : MonoBehaviour
 
                 other.gameObject.GetComponent<CannonScript>().SetPowerup(_powerupType, _currentBubble);
                 _powerupType = PowerupType.None;
+                _cannonArea.SetActive(false);
 
                 break;
         }
