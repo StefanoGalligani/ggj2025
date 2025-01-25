@@ -33,8 +33,8 @@ public class TopPlayerScript : MonoBehaviour
     private float _lastDashAt;
 
 
-    public PlayerState state { get; private set; } = PlayerState.FREE;
-    public uint struggles { get; private set; }
+    public PlayerState State { get; private set; } = PlayerState.FREE;
+    public uint Struggles { get; private set; }
 
 
     void Start()
@@ -59,7 +59,7 @@ public class TopPlayerScript : MonoBehaviour
 
     async Task Movement(bool jump, bool dash, float movement)
     {
-        switch (state)
+        switch (State)
         {
             case PlayerState.FREE:
                 if (jump && Time.time >= _lastJumpAt + _jumpCooldownSec)
@@ -110,13 +110,13 @@ public class TopPlayerScript : MonoBehaviour
         transform.parent = bubble.transform;
         transform.localPosition = Vector2.zero;
 
-        state = PlayerState.TRAPPED;
+        State = PlayerState.TRAPPED;
     }
 
     public void Struggle()
     {
-        struggles++;
-        if (struggles < 4) return;
+        Struggles++;
+        if (Struggles < 4) return;
 
         _rigidbody.bodyType = RigidbodyType2D.Dynamic;
         _rigidbody.linearVelocity = Vector2.zero;
@@ -124,8 +124,8 @@ public class TopPlayerScript : MonoBehaviour
         transform.parent = null;
         transform.localScale = Vector2.one;
 
-        state = PlayerState.FREE;
-        struggles = 0;
+        State = PlayerState.FREE;
+        Struggles = 0;
     }
 }
 
