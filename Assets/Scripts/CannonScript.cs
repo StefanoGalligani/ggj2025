@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class CannonScript : MonoBehaviour
@@ -11,13 +12,14 @@ public class CannonScript : MonoBehaviour
     [SerializeField] private float _cooldownSec = 1;
     private float _lastShotAt;
     private AbstractBubble _specialBubble;
+    private bool _raffic = false;
 
     void Start()
     {
         _lastShotAt = -_cooldownSec;
     }
 
-    void Update()
+    async Task Update()
     {
         Vector2 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
         if (mousePos.y >= _snailArea.position.y + _snailArea.localScale.y)
@@ -40,10 +42,25 @@ public class CannonScript : MonoBehaviour
                     bubble = GameObject.Instantiate<AbstractBubble>(_bubblePrefab, _shootStartPosition.position, Quaternion.identity);
                 }
 
-                bubble.Shoot(transform.up);
+                if (_raffic) {
+                    _raffic = false;
+                    await ShootRaffic(bubble);
+                } else {
+                    bubble.Shoot(transform.up);
+                }
                 _lastShotAt = Time.time;
             }
         }
+    }
+
+    private async Task ShootRaffic(AbstractBubble bubble) {
+        bubble.Shoot(transform.up);
+        await Task.Delay(250);
+        bubble = GameObject.Instantiate<AbstractBubble>(bubble, _shootStartPosition.position, Quaternion.identity);
+        bubble.Shoot(transform.up);
+        await Task.Delay(250);
+        bubble = GameObject.Instantiate<AbstractBubble>(bubble, _shootStartPosition.position, Quaternion.identity);
+        bubble.Shoot(transform.up);
     }
 
     public void SetPowerup(PowerupType type, AbstractBubble bubble)
@@ -53,6 +70,7 @@ public class CannonScript : MonoBehaviour
                 _specialBubble = bubble;
                 break;
             case PowerupType.BubbleRaffic:
+                _raffic = true;
                 break;
             case PowerupType.CannonLock:
                 break;

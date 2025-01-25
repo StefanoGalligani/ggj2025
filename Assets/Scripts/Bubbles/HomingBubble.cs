@@ -17,6 +17,6 @@ public class HomingBubble : SimpleBubble
     protected new void FixedUpdate()
     {
         base.FixedUpdate();
-        _rb.linearVelocityX += _player.transform.position.x * Time.fixedDeltaTime * _homingForce;
+        _rb.linearVelocityX += (_player.transform.position.x - transform.position.x) * Time.fixedDeltaTime * _homingForce;
     }
 }

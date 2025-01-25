@@ -135,8 +135,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 7066029265665729501}
-  _velocity: 5
+  _velocity: 7
   _targetYVelocityRange: {x: 5, y: 6}
+  _homingForce: 1
 --- !u!50 &7066029265665729501
 Rigidbody2D:
   serializedVersion: 5

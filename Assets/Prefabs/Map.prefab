@@ -222,6 +222,9 @@ MonoBehaviour:
   _powerups:
   - {fileID: 489067685791326546, guid: db4745cf56125d04dbf035dc9ddc3930, type: 3}
   - {fileID: 489067685791326546, guid: 6760cf5d3859a4d84be2598d6f34fb50, type: 3}
+  - {fileID: 489067685791326546, guid: 65fa5b2997066fc4085e6b6c247ef742, type: 3}
+  - {fileID: 489067685791326546, guid: 07ee45c9c3ee7fa40b90b54b5c5f3873, type: 3}
+  - {fileID: 489067685791326546, guid: 88e5e1d392632dc45a21206740e1bef1, type: 3}
 --- !u!61 &800706731882719032
 BoxCollider2D:
   m_ObjectHideFlags: 0
