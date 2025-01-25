@@ -76,6 +76,10 @@ public class TopPlayerScript : MonoBehaviour
 
                 Move(movement);
                 break;
+
+            case PlayerState.TRAPPED:
+                if (jump) Struggle();
+                break;
         }
     }
 
@@ -103,10 +107,22 @@ public class TopPlayerScript : MonoBehaviour
     {
         _rigidbody.bodyType = RigidbodyType2D.Kinematic;
 
-        transform.SetParent(bubble.transform);
+        transform.parent = bubble.transform;
         transform.localPosition = Vector2.zero;
 
         state = PlayerState.TRAPPED;
+    }
+
+    public void Struggle()
+    {
+        struggles++;
+        if (struggles < 4) return;
+
+        _rigidbody.bodyType = RigidbodyType2D.Dynamic;
+        transform.parent = null;
+
+        state = PlayerState.FREE;
+        struggles = 0;
     }
 }
 
