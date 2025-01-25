@@ -29,7 +29,7 @@ public class CannonScript : MonoBehaviour
             return;
         }
         Vector2 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
-        if (mousePos.y >= _snailArea.position.y + _snailArea.localScale.y)
+        if (mousePos.y >= _snailArea.position.y + _snailArea.localScale.y + 1.0f)
         {
             transform.up = (Vector3)mousePos - transform.position;
             transform.GetChild(0).rotation = Quaternion.identity;
