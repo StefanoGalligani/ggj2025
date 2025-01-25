@@ -2,15 +2,25 @@ using UnityEngine;
 
 public class CannonScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private Camera _camera;
+    [SerializeField] private RectTransform _snailArea;
+    [SerializeField] private Transform _shootStartPosition;
+    [SerializeField] private AbstractBubble _bubblePrefab;
+     
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
+        Vector2 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
+        if (mousePos.y < _snailArea.position.y + _snailArea.localScale.y + 1) return;
+        transform.up = (Vector3)mousePos - transform.position;
         
+        if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2")) {
+            AbstractBubble bubble = GameObject.Instantiate<AbstractBubble>(_bubblePrefab, _shootStartPosition.position, Quaternion.identity);
+            bubble.Shoot(transform.up);
+        }
     }
 }

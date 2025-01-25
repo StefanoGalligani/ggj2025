@@ -5,20 +5,30 @@ public class SnailScript : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
     [SerializeField] private float _velocity;
+    [SerializeField] private RectTransform _movementArea;
     private Vector2 _targetPosition;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _targetPosition = Vector2.zero;
+        _targetPosition = transform.position;
     }
 
-    // Update is called once per frame
+    private bool Inside(Vector2 pos, RectTransform area) {
+        if (pos.x < area.position.x) return false;
+        if (pos.x > area.position.x + area.localScale.x) return false;
+        if (pos.y < area.position.y) return false;
+        if (pos.y > area.position.y + area.localScale.y) return false;
+        return true;
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2")) {
-            Debug.Log("MousePosition: " + _camera.ScreenToViewportPoint(Input.mousePosition));
-            _targetPosition = (_camera.ScreenToViewportPoint(Input.mousePosition) * 2 - new Vector3(0.5f,0.5f))
-                * _camera.orthographicSize + _camera.transform.position;
+            Vector2 newTargetPosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+            
+            if (Inside(newTargetPosition, _movementArea)) {
+                _targetPosition = newTargetPosition;
+            }
         }
         float dist = Vector3.Distance(transform.position, (Vector3)_targetPosition);
         if (dist > 0.1f) {
