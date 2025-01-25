@@ -47,13 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed84b1e3831668840807d46fa9eed1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 1747634320681910416}
-  jumpForce: 6
-  jumpCooldownSec: 1
-  movementSpeed: 1
-  dashForce: 10
-  dashCooldownSec: 3
-  dashDurationMs: 200
+  _rigidbody: {fileID: 1747634320681910416}
+  _jumpForce: 1
+  _jumpCooldownSec: 1
+  _movementSpeed: 1
+  _dashForce: 1
+  _dashCooldownSec: 3
+  _dashDurationMs: 100
 --- !u!50 &1747634320681910416
 Rigidbody2D:
   serializedVersion: 5

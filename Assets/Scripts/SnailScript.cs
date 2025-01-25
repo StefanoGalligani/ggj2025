@@ -8,7 +8,7 @@ public class SnailScript : MonoBehaviour
     [SerializeField] private RectTransform _movementArea;
     [SerializeField] private LineRenderer _line;
     private Vector2 _targetPosition;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         _targetPosition = transform.position;
@@ -35,6 +35,12 @@ public class SnailScript : MonoBehaviour
         if (dist > 0.1f) {
             transform.position += ((Vector3)_targetPosition - transform.position)/dist * Time.deltaTime * _velocity;
             _line.SetPosition(1, transform.position);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.tag == "Powerup") {
+            Destroy(other.gameObject);
         }
     }
 }
