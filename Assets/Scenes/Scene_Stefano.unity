@@ -976,10 +976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4965868536644684843, guid: a6645aaf3428a6443ae36dfbd3d6cb0d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1078816885}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6645aaf3428a6443ae36dfbd3d6cb0d, type: 3}
 --- !u!1 &1040574229
@@ -1119,84 +1116,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1078816884
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1078816885}
-  - component: {fileID: 1078816886}
-  m_Layer: 3
-  m_Name: BubbleTrigger
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1078816885
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078816884}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1408160992}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1078816886
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078816884}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.0000009536743}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.49853325, y: 0.49853325}
-  m_EdgeRadius: 0
 --- !u!1 &1320825152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1679,8 +1598,16 @@ PrefabInstance:
       value: 4.622831
       objectReference: {fileID: 0}
     - target: {fileID: 3735808049491950194, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 89.54847
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735808049491950194, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.8041
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735808049491950194, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.9792
       objectReference: {fileID: 0}
     - target: {fileID: 3862403486080628221, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1731,8 +1658,16 @@ PrefabInstance:
       value: 4.6243396
       objectReference: {fileID: 0}
     - target: {fileID: 6108114157073371427, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 89.54847
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108114157073371427, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.8036
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108114157073371427, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.9792
       objectReference: {fileID: 0}
     - target: {fileID: 7194605357383408018, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
       propertyPath: _camera

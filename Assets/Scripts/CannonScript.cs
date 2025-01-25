@@ -12,6 +12,11 @@ public class CannonScript : MonoBehaviour
     private float _lastShotAt;
     private AbstractBubble _specialBubble;
 
+    void Start()
+    {
+        _lastShotAt = -_cooldownSec;
+    }
+
     void Update()
     {
         Vector2 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
