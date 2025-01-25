@@ -52,7 +52,7 @@ public class TopPlayerScript : MonoBehaviour
     {
         await Movement(
             jump: Input.GetKeyDown(KeyCode.Space),
-            dash: Input.GetKeyDown(KeyCode.D),
+            dash: Input.GetKeyDown(KeyCode.LeftControl),
             movement: Input.GetAxis("Horizontal")
         );
     }

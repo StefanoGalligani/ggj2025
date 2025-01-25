@@ -10,9 +10,11 @@ public class CannonScript : MonoBehaviour
 
     [Range(0.1f, 10.0f)]
     [SerializeField] private float _cooldownSec = 1;
+    [SerializeField] private float _lockTime = 3;
     private float _lastShotAt;
     private AbstractBubble _specialBubble;
     private bool _raffic = false;
+    private float _currentLockTime = 0;
 
     void Start()
     {
@@ -21,11 +23,16 @@ public class CannonScript : MonoBehaviour
 
     async Task Update()
     {
+        if (_currentLockTime > 0) {
+            _currentLockTime -= Time.deltaTime;
+            return;
+        }
         Vector2 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
         if (mousePos.y >= _snailArea.position.y + _snailArea.localScale.y)
         {
             transform.up = (Vector3)mousePos - transform.position;
             transform.GetChild(0).rotation = Quaternion.identity;
+            if (Time.timeScale < 0.1f) return;
 
             if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2"))
             {
@@ -73,6 +80,7 @@ public class CannonScript : MonoBehaviour
                 _raffic = true;
                 break;
             case PowerupType.CannonLock:
+                _currentLockTime = _lockTime;
                 break;
         }
     }
