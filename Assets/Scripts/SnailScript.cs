@@ -8,6 +8,7 @@ public class SnailScript : MonoBehaviour
     [SerializeField] private RectTransform _movementArea;
     [SerializeField] private LineRenderer _line;
     private Vector2 _targetPosition;
+    private AbstractBubble _currentBubble;
     
     void Start()
     {
@@ -40,7 +41,12 @@ public class SnailScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Powerup") {
+            _currentBubble = other.gameObject.GetComponent<PowerupScript>().GetBubble();
             Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "Cannon" && _currentBubble != null) {
+            other.gameObject.GetComponent<CannonScript>().SetSpecialBubble(_currentBubble);
+            _currentBubble = null;
         }
     }
 }
