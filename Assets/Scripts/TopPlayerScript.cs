@@ -28,7 +28,7 @@ public class TopPlayerScript : MonoBehaviour
     [Range(50, 2000)]
     [SerializeField] private int _dashDurationMs = 100;
 
-    [Range(2,20)]
+    [Range(2, 20)]
     [SerializeField] private int _terminalVelocity = 6;
 
 
