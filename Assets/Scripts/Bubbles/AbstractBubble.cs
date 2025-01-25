@@ -7,7 +7,11 @@ public abstract class AbstractBubble : MonoBehaviour
     [SerializeField] protected float _velocity;
     [SerializeField] private Vector2 _targetYVelocityRange;
 
-    private void Start() {
+    private void Awake() {
+        StopAnim();
+    }
+
+    protected void StopAnim() {
         transform.GetChild(0).GetComponent<Animator>().speed = 0;
     }
 
