@@ -138,3 +138,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerBubble: {fileID: 8610868675965641367, guid: a3df1b94752bb4c9b984fc327b7b8a51, type: 3}
+  powerupType: 1
