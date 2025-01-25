@@ -9,11 +9,7 @@ public class CannonScript : MonoBehaviour
 
     [Range(0.1f, 10.0f)]
     [SerializeField] private float _cooldownSec = 1;
-
-
     private float _lastShotAt;
-
-
     private AbstractBubble _specialBubble;
 
     void Update()
@@ -21,10 +17,8 @@ public class CannonScript : MonoBehaviour
         Vector2 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
         if (mousePos.y >= _snailArea.position.y + _snailArea.localScale.y)
         {
-            if (mousePos.y >= _snailArea.position.y + _snailArea.localScale.y + 1)
-            {
-                transform.up = (Vector3)mousePos - transform.position;
-            }
+            transform.up = (Vector3)mousePos - transform.position;
+            transform.GetChild(0).rotation = Quaternion.identity;
 
             if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2"))
             {
@@ -40,7 +34,6 @@ public class CannonScript : MonoBehaviour
                 {
                     bubble = GameObject.Instantiate<AbstractBubble>(_bubblePrefab, _shootStartPosition.position, Quaternion.identity);
                 }
-
 
                 bubble.Shoot(transform.up);
                 _lastShotAt = Time.time;
