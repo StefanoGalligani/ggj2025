@@ -6,6 +6,7 @@ public class SnailScript : MonoBehaviour
     [SerializeField] private Camera _camera;
     [SerializeField] private float _velocity;
     [SerializeField] private RectTransform _movementArea;
+    [SerializeField] private LineRenderer _line;
     private Vector2 _targetPosition;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,6 +34,7 @@ public class SnailScript : MonoBehaviour
         float dist = Vector3.Distance(transform.position, (Vector3)_targetPosition);
         if (dist > 0.1f) {
             transform.position += ((Vector3)_targetPosition - transform.position)/dist * Time.deltaTime * _velocity;
+            _line.SetPosition(1, transform.position);
         }
     }
 }
