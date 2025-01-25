@@ -19,6 +19,7 @@ public class CannonScript : MonoBehaviour
     void Start()
     {
         _lastShotAt = -_cooldownSec;
+        transform.GetChild(0).GetComponent<Animator>().Play("Empty");
     }
 
     async Task Update()
@@ -54,10 +55,16 @@ public class CannonScript : MonoBehaviour
                     await ShootRaffic(bubble);
                 } else {
                     bubble.Shoot(transform.up);
+                    ReloadAnimation();
                 }
                 _lastShotAt = Time.time;
             }
         }
+    }
+
+    private void ReloadAnimation() {
+        transform.GetChild(0).GetComponent<Animator>().speed = 0.417f / _cooldownSec;
+        transform.GetChild(0).GetComponent<Animator>().Play("CannonReload");
     }
 
     private async Task ShootRaffic(AbstractBubble bubble) {
@@ -68,6 +75,7 @@ public class CannonScript : MonoBehaviour
         await Task.Delay(250);
         bubble = GameObject.Instantiate<AbstractBubble>(bubble, _shootStartPosition.position, Quaternion.identity);
         bubble.Shoot(transform.up);
+        ReloadAnimation();
     }
 
     public void SetPowerup(PowerupType type, AbstractBubble bubble)

@@ -20,7 +20,7 @@ public class SnailScript : MonoBehaviour
         if (pos.x < area.position.x) return false;
         if (pos.x > area.position.x + area.localScale.x) return false;
         if (pos.y < area.position.y) return false;
-        if (pos.y > area.position.y + area.localScale.y - 1) return false;
+        if (pos.y > area.position.y + area.localScale.y) return false;
         return true;
     }
 
@@ -33,6 +33,9 @@ public class SnailScript : MonoBehaviour
             if (Inside(newTargetPosition, _movementArea))
             {
                 _targetPosition = newTargetPosition;
+                if (_targetPosition.y > _movementArea.position.y + _movementArea.localScale.y) {
+                    _targetPosition.y = _movementArea.position.y + _movementArea.localScale.y;
+                } 
             }
         }
         float dist = Vector3.Distance(transform.position, (Vector3)_targetPosition);
