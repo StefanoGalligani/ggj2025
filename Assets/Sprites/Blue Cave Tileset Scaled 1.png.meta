@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dafd20d18ef629849acef59e8c919695
+guid: 6a9fa124485574b9a90275d9c38cdbef
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3884317447603662329
-    second: ancora vf_0
+      213: -6381284639608659770
+    second: Blue Cave Tileset Scaled 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ancora vf_0
+      name: Blue Cave Tileset Scaled 1_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 27
-        width: 74
-        height: 88
+        x: 0
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7025bb48cd1281ac0800000000000000
-      internalID: -3884317447603662329
+      spriteID: 6c028750e6f1177a0800000000000000
+      internalID: -6381284639608659770
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      ancora vf_0: -3884317447603662329
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
