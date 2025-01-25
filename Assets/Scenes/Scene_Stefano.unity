@@ -442,6 +442,18 @@ PrefabInstance:
       propertyPath: m_Creator
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6547867377386255330, guid: 8132dbaa8d8d244689f9ac64428709c0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547867377386255330, guid: 8132dbaa8d8d244689f9ac64428709c0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547867377386255330, guid: 8132dbaa8d8d244689f9ac64428709c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 6808193289269163184, guid: 8132dbaa8d8d244689f9ac64428709c0, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
       value: 167
@@ -1694,6 +1706,26 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 680154033}
+    - target: {fileID: 8612313882805753976, guid: 8132dbaa8d8d244689f9ac64428709c0, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612313882805753976, guid: 8132dbaa8d8d244689f9ac64428709c0, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612313882805753976, guid: 8132dbaa8d8d244689f9ac64428709c0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -54220471537460348, guid: 36f15b741ed5cd845a6e2ff028e8cc4f, type: 3}
+    - target: {fileID: 8612313882805753976, guid: 8132dbaa8d8d244689f9ac64428709c0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612313882805753976, guid: 8132dbaa8d8d244689f9ac64428709c0, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2374,6 +2406,10 @@ PrefabInstance:
       propertyPath: _dashDurationMs
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 4210980912217900197, guid: a6645aaf3428a6443ae36dfbd3d6cb0d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4078796110908485188, guid: e914b916e8792e94085be7def77e7b64, type: 3}
     - target: {fileID: 4965868536644684843, guid: a6645aaf3428a6443ae36dfbd3d6cb0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
