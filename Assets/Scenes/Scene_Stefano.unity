@@ -1869,22 +1869,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map
       objectReference: {fileID: 0}
-    - target: {fileID: 3735808049491950194, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.622831
-      objectReference: {fileID: 0}
-    - target: {fileID: 3735808049491950194, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 89.54847
-      objectReference: {fileID: 0}
-    - target: {fileID: 3735808049491950194, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.8041
-      objectReference: {fileID: 0}
-    - target: {fileID: 3735808049491950194, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 19.9792
-      objectReference: {fileID: 0}
     - target: {fileID: 3862403486080628221, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1924,26 +1908,6 @@ PrefabInstance:
     - target: {fileID: 3862403486080628221, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4514998102524455307, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
-      propertyPath: m_Radius
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6108114157073371427, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.6243396
-      objectReference: {fileID: 0}
-    - target: {fileID: 6108114157073371427, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 89.54847
-      objectReference: {fileID: 0}
-    - target: {fileID: 6108114157073371427, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.8036
-      objectReference: {fileID: 0}
-    - target: {fileID: 6108114157073371427, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 19.9792
       objectReference: {fileID: 0}
     - target: {fileID: 7194605357383408018, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
       propertyPath: _camera

@@ -28,6 +28,9 @@ public class TopPlayerScript : MonoBehaviour
     [Range(50, 2000)]
     [SerializeField] private int _dashDurationMs = 100;
 
+    [Range(2,20)]
+    [SerializeField] private int _terminalVelocity = 6;
+
 
     private float _lastJumpAt;
     private float _lastDashAt;
@@ -46,6 +49,7 @@ public class TopPlayerScript : MonoBehaviour
     void Update()
     {
         ProcessInput();
+        _rigidbody.linearVelocityY = Mathf.Clamp(_rigidbody.linearVelocityY, -_terminalVelocity, _terminalVelocity);
     }
 
     async void ProcessInput()
@@ -111,6 +115,7 @@ public class TopPlayerScript : MonoBehaviour
         transform.localPosition = Vector2.zero;
 
         State = PlayerState.TRAPPED;
+        bubble.EnteredBubble();
     }
 
     public void Struggle()
@@ -121,6 +126,7 @@ public class TopPlayerScript : MonoBehaviour
         _rigidbody.bodyType = RigidbodyType2D.Dynamic;
         _rigidbody.linearVelocity = Vector2.zero;
 
+        transform.parent.GetComponent<AbstractBubble>().ExitedBubble();
         transform.parent = null;
         transform.localScale = Vector2.one;
 

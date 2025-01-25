@@ -58,8 +58,8 @@ Transform:
   m_GameObject: {fileID: 865472588695093836}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.8036, y: 0.1359, z: 0}
-  m_LocalScale: {x: 4.6243396, y: 49.86328, z: 1}
+  m_LocalPosition: {x: -6.8036, y: 19.9792, z: 0}
+  m_LocalScale: {x: 4.6243396, y: 89.54847, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3862403486080628221}
@@ -680,8 +680,8 @@ Transform:
   m_GameObject: {fileID: 2050606755463164261}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.8041, y: 0.1359, z: 0}
-  m_LocalScale: {x: 4.622831, y: 49.86328, z: 1}
+  m_LocalPosition: {x: 6.8041, y: 19.9792, z: 0}
+  m_LocalScale: {x: 4.622831, y: 89.54847, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3862403486080628221}
@@ -1336,6 +1336,7 @@ MonoBehaviour:
   _shootStartPosition: {fileID: 1764804034871906820}
   _bubblePrefab: {fileID: 7335095881979409491, guid: 72c87e625c2b6b844aa21d3b7db55301, type: 3}
   _cooldownSec: 1
+  _lockTime: 3
 --- !u!58 &4514998102524455307
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1371,4 +1372,4 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 1.2
+  m_Radius: 1.25

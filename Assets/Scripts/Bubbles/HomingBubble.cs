@@ -5,9 +5,7 @@ public class HomingBubble : SimpleBubble
     [Range(0.5f, 3.0f)]
     [SerializeField] private float _homingForce = 1;
 
-
     private TopPlayerScript _player;
-
 
     void Start()
     {
@@ -18,5 +16,11 @@ public class HomingBubble : SimpleBubble
     {
         base.FixedUpdate();
         _rb.linearVelocityX += (_player.transform.position.x - transform.position.x) * Time.fixedDeltaTime * _homingForce;
+    }
+
+    public override void EnteredBubble()
+    {
+        base.EnteredBubble();
+        GameObject.Destroy(transform.GetChild(1).gameObject);
     }
 }
