@@ -32,6 +32,7 @@ public class TopPlayerScript : MonoBehaviour
 
     [Range(0.1f, 2)]
     [SerializeField] private float _stunnedTime = 1;
+    [SerializeField] private Sprite[] _sprites;
 
     private float _lastJumpAt;
     private float _lastDashAt;
@@ -53,6 +54,7 @@ public class TopPlayerScript : MonoBehaviour
             _currentStunTime += Time.deltaTime;
             if (_currentStunTime >= _stunnedTime) {
                 _stunned = false;
+                GetComponentInChildren<SpriteRenderer>().sprite = _sprites[0];
             }
         } else {
             ProcessInput();
@@ -124,6 +126,7 @@ public class TopPlayerScript : MonoBehaviour
 
         State = PlayerState.TRAPPED;
         bubble.EnteredBubble();
+        GetComponentInChildren<SpriteRenderer>().sprite = _sprites[1];
     }
 
     public void Struggle()
@@ -140,6 +143,7 @@ public class TopPlayerScript : MonoBehaviour
 
         State = PlayerState.FREE;
         Struggles = 0;
+        GetComponentInChildren<SpriteRenderer>().sprite = _sprites[0];
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
@@ -147,6 +151,7 @@ public class TopPlayerScript : MonoBehaviour
             _rigidbody.AddForce((transform.position - other.transform.position).normalized * 5, ForceMode2D.Impulse);
             _currentStunTime = 0;
             _stunned = true;
+            GetComponentInChildren<SpriteRenderer>().sprite = _sprites[2];
         }
     }
 }
