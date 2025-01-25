@@ -137,4 +137,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5baf12655593a544fbf585708deceacb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _powerBubble: {fileID: 8610868675965641367, guid: a3df1b94752bb4c9b984fc327b7b8a51, type: 3}
+  powerBubble: {fileID: 8610868675965641367, guid: a3df1b94752bb4c9b984fc327b7b8a51, type: 3}

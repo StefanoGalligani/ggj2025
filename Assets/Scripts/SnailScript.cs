@@ -47,7 +47,7 @@ public class SnailScript : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Powerup":
-                _currentBubble = other.gameObject.GetComponent<PowerupScript>().PowerBubble;
+                _currentBubble = other.gameObject.GetComponent<PowerupScript>().powerBubble;
                 Destroy(other.gameObject);
 
                 break;
