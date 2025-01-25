@@ -119,6 +119,7 @@ public class TopPlayerScript : MonoBehaviour
         if (struggles < 4) return;
 
         _rigidbody.bodyType = RigidbodyType2D.Dynamic;
+        _rigidbody.linearVelocity = Vector2.zero;
         transform.parent = null;
 
         state = PlayerState.FREE;
