@@ -1589,6 +1589,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 299716315406468032, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
+      propertyPath: _powerups.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 299716315406468032, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
+      propertyPath: '_powerups.Array.data[1]'
+      value: 
+      objectReference: {fileID: 489067685791326546, guid: 6760cf5d3859a4d84be2598d6f34fb50, type: 3}
     - target: {fileID: 1077333977126467820, guid: 8b36aef6269141c4da9e4eee904975e7, type: 3}
       propertyPath: m_Name
       value: Map
