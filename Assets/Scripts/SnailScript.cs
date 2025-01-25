@@ -50,13 +50,10 @@ public class SnailScript : MonoBehaviour
                 _currentBubble = other.gameObject.GetComponent<PowerupScript>().PowerBubble;
                 Destroy(other.gameObject);
 
-                other.gameObject.GetComponent<CannonScript>().SetSpecialBubble(_currentBubble);
-                _currentBubble = null;
-
                 break;
 
             case "Cannon":
-                if (_currentBubble != null) break;
+                if (_currentBubble == null) break;
 
                 other.gameObject.GetComponent<CannonScript>().SetSpecialBubble(_currentBubble);
                 _currentBubble = null;
