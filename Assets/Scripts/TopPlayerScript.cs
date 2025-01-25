@@ -99,9 +99,14 @@ public class TopPlayerScript : MonoBehaviour
         _rigidbody.AddForceX(movement * _movementSpeed);
     }
 
-    void Trap()
+    public void Trap(AbstractBubble bubble)
     {
+        _rigidbody.bodyType = RigidbodyType2D.Kinematic;
 
+        transform.SetParent(bubble.transform);
+        transform.localPosition = Vector2.zero;
+
+        state = PlayerState.TRAPPED;
     }
 }
 

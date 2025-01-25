@@ -11,7 +11,8 @@ public class SimpleBubble : AbstractBubble
             return;
         }
 
-
+        var player = other.gameObject.GetComponent<TopPlayerScript>();
+        player.Trap(this);
     }
 
     void Update() { }
