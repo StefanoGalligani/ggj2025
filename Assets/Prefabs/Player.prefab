@@ -55,6 +55,12 @@ MonoBehaviour:
   _dashForce: 10
   _dashCooldownSec: 3
   _dashDurationMs: 200
+  _terminalVelocity: 6
+  _stunnedTime: 1
+  _sprites:
+  - {fileID: 4078796110908485188, guid: e914b916e8792e94085be7def77e7b64, type: 3}
+  - {fileID: -7938878928584171511, guid: e914b916e8792e94085be7def77e7b64, type: 3}
+  - {fileID: -5417141958962910980, guid: e914b916e8792e94085be7def77e7b64, type: 3}
 --- !u!50 &1747634320681910416
 Rigidbody2D:
   serializedVersion: 5
@@ -126,7 +132,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.50077057, y: 0.50077057}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &4726081421663923864
 GameObject:
@@ -137,7 +143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2486365740203589146}
-  - component: {fileID: 6106211194815780763}
+  - component: {fileID: 5191145346606799200}
   m_Layer: 0
   m_Name: BubbleTrigger
   m_TagString: Player
@@ -160,8 +166,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4965868536644684843}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &6106211194815780763
-BoxCollider2D:
+--- !u!58 &5191145346606799200
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -194,18 +200,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.0000009536743}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.49853325, y: 0.49853325}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
 --- !u!1 &5513369222320138072
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +278,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 4078796110908485188, guid: e914b916e8792e94085be7def77e7b64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
