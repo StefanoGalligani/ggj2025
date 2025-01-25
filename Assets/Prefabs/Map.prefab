@@ -174,6 +174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8556795570162756877}
+  - component: {fileID: 299716315406468032}
   m_Layer: 0
   m_Name: SnailArea
   m_TagString: Untagged
@@ -201,6 +202,22 @@ RectTransform:
   m_AnchoredPosition: {x: -4.5, y: -25}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &299716315406468032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905366659196716289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23987245f835414da8be195b71cf569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnArea: {fileID: 8556795570162756877}
+  _spawnTime: 5
+  _powerups:
+  - {fileID: 489067685791326546, guid: db4745cf56125d04dbf035dc9ddc3930, type: 3}
 --- !u!1 &1077333977126467820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1149,7 @@ MonoBehaviour:
   _snailArea: {fileID: 8556795570162756877}
   _shootStartPosition: {fileID: 1764804034871906820}
   _bubblePrefab: {fileID: 7335095881979409491, guid: 72c87e625c2b6b844aa21d3b7db55301, type: 3}
+  _cooldownSec: 1
 --- !u!58 &4514998102524455307
 CircleCollider2D:
   m_ObjectHideFlags: 0
