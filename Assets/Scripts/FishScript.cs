@@ -12,7 +12,7 @@ public class FishScript : MonoBehaviour
 
     void Update()
     {
-        GetComponent<SpriteRenderer>().flipX = !_facingRight;
+        GetComponentInChildren<SpriteRenderer>().flipX = !_facingRight;
         transform.position = new Vector3(transform.position.x + Time.deltaTime * _velocity * (_facingRight ? 1 : -1), transform.position.y, 0);
         if (transform.position.x > _bounds.y) {
             _facingRight = false;
