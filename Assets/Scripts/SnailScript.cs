@@ -20,7 +20,7 @@ public class SnailScript : MonoBehaviour
         if (pos.x < area.position.x) return false;
         if (pos.x > area.position.x + area.localScale.x) return false;
         if (pos.y < area.position.y) return false;
-        if (pos.y > area.position.y + area.localScale.y) return false;
+        if (pos.y > area.position.y + area.localScale.y - 1) return false;
         return true;
     }
 
