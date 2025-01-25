@@ -126,7 +126,7 @@ public class TopPlayerScript : MonoBehaviour
         _rigidbody.bodyType = RigidbodyType2D.Dynamic;
         _rigidbody.linearVelocity = Vector2.zero;
 
-        transform.parent.GetComponent<AbstractBubble>().ExitedBubble();
+        _ = transform.parent.GetComponent<AbstractBubble>().ExitedBubble();
         transform.parent = null;
         transform.localScale = Vector2.one;
 
