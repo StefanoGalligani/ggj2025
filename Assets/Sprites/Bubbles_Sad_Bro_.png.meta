@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bubbles_Sad_Bro__0: -8316161264435561362
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
