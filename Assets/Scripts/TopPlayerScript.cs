@@ -5,37 +5,42 @@ using UnityEngine;
 
 public class TopPlayerScript : MonoBehaviour
 {
-    [SerializeField] new Rigidbody2D rigidbody;
+    [SerializeField] private Rigidbody2D _rigidbody;
 
 
     [Range(0.1f, 10.0f)]
-    [SerializeField] float jumpForce = 1;
+    [SerializeField] private float _jumpForce = 1;
 
     [Range(0.1f, 10.0f)]
-    [SerializeField] float jumpCooldownSec = 1;
-
-
-    [Range(0.1f, 10.0f)]
-    [SerializeField] float movementSpeed = 1;
+    [SerializeField] private float _jumpCooldownSec = 1;
 
 
     [Range(0.1f, 10.0f)]
-    [SerializeField] float dashForce = 1;
+    [SerializeField] private float _movementSpeed = 1;
+
 
     [Range(0.1f, 10.0f)]
-    [SerializeField] float dashCooldownSec = 3;
+    [SerializeField] private float _dashForce = 1;
+
+    [Range(0.1f, 10.0f)]
+    [SerializeField] private float _dashCooldownSec = 3;
 
     [Range(50, 2000)]
-    [SerializeField] int dashDurationMs = 100;
+    [SerializeField] private int _dashDurationMs = 100;
 
 
-    private float lastJumpAt;
-    private float lastDashAt;
+    private float _lastJumpAt;
+    private float _lastDashAt;
+
+
+    public PlayerState state { get; private set; } = PlayerState.FREE;
+    public uint struggles { get; private set; }
+
 
     void Start()
     {
-        lastJumpAt = -jumpCooldownSec;
-        lastDashAt = -dashCooldownSec;
+        _lastJumpAt = -_jumpCooldownSec;
+        _lastDashAt = -_dashCooldownSec;
     }
 
     void Update()
@@ -54,38 +59,50 @@ public class TopPlayerScript : MonoBehaviour
 
     async Task Movement(bool jump, bool dash, float movement)
     {
-        if (jump && Time.time >= lastJumpAt + jumpCooldownSec)
+        switch (state)
         {
-            Jump();
-            lastJumpAt = Time.time;
-        }
+            case PlayerState.FREE:
+                if (jump && Time.time >= _lastJumpAt + _jumpCooldownSec)
+                {
+                    Jump();
+                    _lastJumpAt = Time.time;
+                }
 
-        if (dash && Time.time >= lastDashAt + dashCooldownSec)
-        {
-            await Dash(movement);
-            lastDashAt = Time.time;
-        }
+                if (dash && Time.time >= _lastDashAt + _dashCooldownSec)
+                {
+                    await Dash(movement);
+                    _lastDashAt = Time.time;
+                }
 
-        Move(movement);
+                Move(movement);
+                break;
+        }
     }
 
     void Jump()
     {
-        rigidbody.AddForceY(jumpForce, ForceMode2D.Impulse);
+        _rigidbody.AddForceY(_jumpForce, ForceMode2D.Impulse);
     }
 
     async Task Dash(float direction)
     {
-        var dashVec = new Vector2(direction, 0).normalized * dashForce;
-        rigidbody.linearVelocity = dashVec;
+        var dashVec = new Vector2(direction, 0).normalized * _dashForce;
+        _rigidbody.linearVelocity = dashVec;
 
-        await Task.Delay(dashDurationMs);
+        await Task.Delay(_dashDurationMs);
 
-        rigidbody.linearVelocity = Vector2.zero;
+        _rigidbody.linearVelocity = Vector2.zero;
     }
 
     void Move(float movement)
     {
-        rigidbody.AddForceX(movement * movementSpeed);
+        _rigidbody.AddForceX(movement * _movementSpeed);
+    }
+
+    void Trap()
+    {
+
     }
 }
+
+public enum PlayerState { FREE, TRAPPED }
