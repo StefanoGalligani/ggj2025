@@ -8,6 +8,7 @@ public class SnailScript : MonoBehaviour
     [SerializeField] private LineRenderer _line;
     private Vector2 _targetPosition;
     private AbstractBubble _currentBubble;
+    private PowerupType _powerupType = PowerupType.None;
 
     void Start()
     {
@@ -48,15 +49,16 @@ public class SnailScript : MonoBehaviour
         {
             case "Powerup":
                 _currentBubble = other.gameObject.GetComponent<PowerupScript>().powerBubble;
+                _powerupType = other.gameObject.GetComponent<PowerupScript>().powerupType;
                 Destroy(other.gameObject);
 
                 break;
 
             case "Cannon":
-                if (_currentBubble == null) break;
+                if (_powerupType == PowerupType.None) break;
 
-                other.gameObject.GetComponent<CannonScript>().SetSpecialBubble(_currentBubble);
-                _currentBubble = null;
+                other.gameObject.GetComponent<CannonScript>().SetPowerup(_powerupType, _currentBubble);
+                _powerupType = PowerupType.None;
 
                 break;
         }

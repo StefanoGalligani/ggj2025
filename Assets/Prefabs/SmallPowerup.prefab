@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7280393642183123140}
   - component: {fileID: 489067685791326546}
   m_Layer: 0
-  m_Name: HomingPowerup
+  m_Name: SmallPowerup
   m_TagString: Powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.7294118, g: 0.20784314, b: 0.09019608, a: 1}
+  m_Color: {r: 0.89254564, g: 0.9411765, b: 0.52156866, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -137,5 +137,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5baf12655593a544fbf585708deceacb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerBubble: {fileID: 1503154834501404205, guid: bc4e19456265e7d469ab816437f1843c, type: 3}
+  powerBubble: {fileID: 7335095881979409491, guid: 1e260f6c4bc5bc44db85e41ef5ede1c7, type: 3}
   powerupType: 1

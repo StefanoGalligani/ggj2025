@@ -46,8 +46,16 @@ public class CannonScript : MonoBehaviour
         }
     }
 
-    public void SetSpecialBubble(AbstractBubble bubble)
+    public void SetPowerup(PowerupType type, AbstractBubble bubble)
     {
-        _specialBubble = bubble;
+        switch (type) {
+            case PowerupType.SpecialBubble:
+                _specialBubble = bubble;
+                break;
+            case PowerupType.BubbleRaffic:
+                break;
+            case PowerupType.CannonLock:
+                break;
+        }
     }
 }
