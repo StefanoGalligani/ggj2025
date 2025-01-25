@@ -7,7 +7,6 @@ public class TopPlayerScript : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rigidbody;
 
-
     [Range(0.1f, 10.0f)]
     [SerializeField] private float _jumpForce = 1;
 
@@ -31,14 +30,16 @@ public class TopPlayerScript : MonoBehaviour
     [Range(2, 20)]
     [SerializeField] private int _terminalVelocity = 6;
 
+    [Range(0.1f, 2)]
+    [SerializeField] private float _stunnedTime = 1;
 
     private float _lastJumpAt;
     private float _lastDashAt;
-
+    private float _currentStunTime;
+    private bool _stunned;
 
     public PlayerState State { get; private set; } = PlayerState.FREE;
     public uint Struggles { get; private set; }
-
 
     void Start()
     {
@@ -48,7 +49,14 @@ public class TopPlayerScript : MonoBehaviour
 
     void Update()
     {
-        ProcessInput();
+        if (_stunned) {
+            _currentStunTime += Time.deltaTime;
+            if (_currentStunTime >= _stunnedTime) {
+                _stunned = false;
+            }
+        } else {
+            ProcessInput();
+        }
         _rigidbody.linearVelocityY = Mathf.Clamp(_rigidbody.linearVelocityY, -_terminalVelocity, _terminalVelocity);
     }
 
@@ -132,6 +140,14 @@ public class TopPlayerScript : MonoBehaviour
 
         State = PlayerState.FREE;
         Struggles = 0;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.tag == "Obstacle") {
+            _rigidbody.AddForce((transform.position - other.transform.position).normalized * 5, ForceMode2D.Impulse);
+            _currentStunTime = 0;
+            _stunned = true;
+        }
     }
 }
 
