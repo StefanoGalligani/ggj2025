@@ -2313,8 +2313,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Credits
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6d5161737b03d4b00b9d5b21d0c85f53, type: 2}
-  m_sharedMaterial: {fileID: 899243859558664000, guid: 6d5161737b03d4b00b9d5b21d0c85f53, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 81364dd2f159c4c75ae8e3c3d4ca2263, type: 2}
+  m_sharedMaterial: {fileID: 8274117530697570917, guid: 81364dd2f159c4c75ae8e3c3d4ca2263, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
