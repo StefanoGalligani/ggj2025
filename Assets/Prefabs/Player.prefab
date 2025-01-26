@@ -49,9 +49,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 1747634320681910416}
-  _jumpForce: 4
+  _jumpForce: 0.2
   _jumpCooldownSec: 1
-  _movementSpeed: 1
+  _movementSpeed: 0.1
   _dashForce: 10
   _dashCooldownSec: 3
   _dashDurationMs: 200
@@ -61,6 +61,7 @@ MonoBehaviour:
   - {fileID: 4078796110908485188, guid: e914b916e8792e94085be7def77e7b64, type: 3}
   - {fileID: -7938878928584171511, guid: e914b916e8792e94085be7def77e7b64, type: 3}
   - {fileID: -5417141958962910980, guid: e914b916e8792e94085be7def77e7b64, type: 3}
+  _bounceForce: 0.1
 --- !u!50 &1747634320681910416
 Rigidbody2D:
   serializedVersion: 5
@@ -73,10 +74,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.08
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0.2
+  m_GravityScale: 0.08
   m_Material: {fileID: 6200000, guid: 3727b7abe80884fc4be61db301c7162f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
