@@ -51,13 +51,17 @@ public class TopPlayerScript : MonoBehaviour
 
     void Update()
     {
-        if (_stunned) {
+        if (_stunned)
+        {
             _currentStunTime += Time.deltaTime;
-            if (_currentStunTime >= _stunnedTime) {
+            if (_currentStunTime >= _stunnedTime)
+            {
                 _stunned = false;
                 GetComponentInChildren<SpriteRenderer>().sprite = _sprites[0];
             }
-        } else {
+        }
+        else
+        {
             ProcessInput();
         }
         _rigidbody.linearVelocityY = Mathf.Clamp(_rigidbody.linearVelocityY, -_terminalVelocity, _terminalVelocity);
@@ -124,13 +128,13 @@ public class TopPlayerScript : MonoBehaviour
 
     public void Trap(AbstractBubble bubble)
     {
+        bubble.EnteredBubble();
         _rigidbody.bodyType = RigidbodyType2D.Kinematic;
 
         transform.parent = bubble.transform;
         transform.localPosition = Vector2.zero;
 
         State = PlayerState.TRAPPED;
-        bubble.EnteredBubble();
         GetComponentInChildren<SpriteRenderer>().sprite = _sprites[1];
     }
 
@@ -151,8 +155,10 @@ public class TopPlayerScript : MonoBehaviour
         GetComponentInChildren<SpriteRenderer>().sprite = _sprites[0];
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Obstacle") {
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Obstacle")
+        {
             _rigidbody.AddForce((transform.position - other.transform.position).normalized * 5, ForceMode2D.Impulse);
             _currentStunTime = 0;
             _stunned = true;

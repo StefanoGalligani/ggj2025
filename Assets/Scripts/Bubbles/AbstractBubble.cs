@@ -7,11 +7,13 @@ public abstract class AbstractBubble : MonoBehaviour
     [SerializeField] protected float _velocity;
     [SerializeField] private Vector2 _targetYVelocityRange;
 
-    private void Awake() {
+    private void Awake()
+    {
         StopAnim();
     }
 
-    protected void StopAnim() {
+    protected void StopAnim()
+    {
         transform.GetChild(0).GetComponent<Animator>().speed = 0;
     }
 
@@ -29,8 +31,13 @@ public abstract class AbstractBubble : MonoBehaviour
         _rb.linearVelocityY += deltaYVelocity * Time.fixedDeltaTime;
     }
 
-    public virtual void EnteredBubble() {}
-    public async Task ExitedBubble() {
+    public virtual void EnteredBubble()
+    {
+        transform.localScale = Vector2.one * 3;
+    }
+
+    public async Task ExitedBubble()
+    {
         Destroy(GetComponent<Collider2D>());
         transform.GetChild(0).GetComponent<Animator>().speed = 1;
         await Task.Delay(200);
