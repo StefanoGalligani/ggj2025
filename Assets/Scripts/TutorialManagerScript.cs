@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -37,8 +38,12 @@ public class TutorialManagerScript : MonoBehaviour
     }
 
     private void NextPanelLeft() {
-        _currentLeftPanel++;
-        _leftTutorialPanel.transform.GetChild(_currentLeftPanel - 1).gameObject.SetActive(false);
+        if (_currentLeftPanel < _leftTutorialPanel.transform.childCount) {
+            _currentLeftPanel++;
+        }
+        try {
+            _leftTutorialPanel.transform.GetChild(_currentLeftPanel - 1).gameObject.SetActive(false);
+        } catch(Exception e) {}
         if (_currentLeftPanel == _leftTutorialPanel.transform.childCount) {
             if (_currentRightPanel == _rightTutorialPanel.transform.childCount) {
                 EndTutorial();
@@ -49,7 +54,9 @@ public class TutorialManagerScript : MonoBehaviour
     }
 
     private void NextPanelRight() {
-        _currentRightPanel++;
+        if (_currentRightPanel < _rightTutorialPanel.transform.childCount) {
+            _currentRightPanel++;
+        }
         _rightTutorialPanel.transform.GetChild(_currentRightPanel - 1).gameObject.SetActive(false);
         if (_currentRightPanel == _rightTutorialPanel.transform.childCount) {
             if (_currentLeftPanel == _leftTutorialPanel.transform.childCount) {

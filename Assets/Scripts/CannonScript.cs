@@ -95,6 +95,9 @@ public class CannonScript : MonoBehaviour
                 _currentLockTime = _lockTime;
                 transform.GetChild(4).gameObject.SetActive(true);
                 break;
+            case PowerupType.None:
+                return;
         }
+        GetComponent<AudioSource>().Play();
     }
 }
