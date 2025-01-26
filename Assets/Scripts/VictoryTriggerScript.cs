@@ -6,38 +6,51 @@ using UnityEngine.SceneManagement;
 public class VictoryTriggerScript : MonoBehaviour
 {
     [SerializeField] private bool isBottom;
-    [SerializeField] private TextMeshProUGUI _topText;
-    [SerializeField] private TextMeshProUGUI _bottomText;
+    // [SerializeField] private TextMeshProUGUI _topText;
+    // [SerializeField] private TextMeshProUGUI _bottomText;
+    // bool _finished = false;
+
+    [SerializeField] private VictoryManagerScript _victoryManager;
+
     bool _finished = false;
 
-    private void Start() {
-        _topText.enabled = false;
-        _bottomText.enabled = false;
-    }
+    // private void Start()
+    // {
+    //     _topText.enabled = false;
+    //     _bottomText.enabled = false;
+    // }
 
-    private async void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "Player" && !_finished) {
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player" && !_finished)
+        {
             _finished = true;
-            _topText.enabled = true;
-            _bottomText.enabled = true;
+            _victoryManager.EndGame(isBottom);
 
-            _topText.text = isBottom ? "You Won!" : "You Lost!";
-            _bottomText.text = isBottom ? "You Lost!" : "You Won!";
+            // _topText.enabled = true;
+            // _bottomText.enabled = true;
 
-            Time.timeScale = 0;
-            if (isBottom) {
-                PlayerPrefs.SetInt("LeftScore", PlayerPrefs.GetInt("LeftScore", 0) + 1);
-            } else {
-                PlayerPrefs.SetInt("RightScore", PlayerPrefs.GetInt("RightScore", 0) + 1);
-            }
+            // _topText.text = isBottom ? "You Won!" : "You Lost!";
+            // _bottomText.text = isBottom ? "You Lost!" : "You Won!";
 
-            await RestartGame();
+            // Time.timeScale = 0;
+            // if (isBottom)
+            // {
+            //     PlayerPrefs.SetInt("LeftScore", PlayerPrefs.GetInt("LeftScore", 0) + 1);
+            // }
+            // else
+            // {
+            //     PlayerPrefs.SetInt("RightScore", PlayerPrefs.GetInt("RightScore", 0) + 1);
+            // }
+
+            // await RestartGame();
         }
     }
 
-    private async Task RestartGame() {
-        await Task.Delay(1000);
-        Time.timeScale = 1;
-        SceneManager.LoadScene(1);
-    }
+    // private async Task RestartGame()
+    // {
+    //     await Task.Delay(1000);
+    //     Time.timeScale = 1;
+    //     SceneManager.LoadScene(1);
+    // }
 }
