@@ -69,7 +69,7 @@ public class TopPlayerScript : MonoBehaviour
         }
         _rigidbody.linearVelocityY = Mathf.Clamp(_rigidbody.linearVelocityY, -_terminalVelocity, _terminalVelocity);
 
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale > 0.1f) {
             SceneManager.LoadScene(0);
         }
     }

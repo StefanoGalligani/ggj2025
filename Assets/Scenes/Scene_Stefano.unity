@@ -253,10 +253,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map
       objectReference: {fileID: 0}
-    - target: {fileID: 3595052388038469929, guid: 8132dbaa8d8d244689f9ac64428709c0, type: 3}
-      propertyPath: m_Creator
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3862403486080628221, guid: 8132dbaa8d8d244689f9ac64428709c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -296,10 +292,6 @@ PrefabInstance:
     - target: {fileID: 3862403486080628221, guid: 8132dbaa8d8d244689f9ac64428709c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4972141300076328117, guid: 8132dbaa8d8d244689f9ac64428709c0, type: 3}
-      propertyPath: m_Creator
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7194605357383408018, guid: 8132dbaa8d8d244689f9ac64428709c0, type: 3}
       propertyPath: _camera
@@ -1637,6 +1629,10 @@ PrefabInstance:
     - target: {fileID: 811444602238015203, guid: 0cec83d1efda57a47a22a68013760d37, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 811444602238015203, guid: 0cec83d1efda57a47a22a68013760d37, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2627665366344821801, guid: 0cec83d1efda57a47a22a68013760d37, type: 3}
       propertyPath: m_LocalPosition.x
