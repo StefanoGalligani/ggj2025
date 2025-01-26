@@ -35,6 +35,9 @@ public class TopPlayerScript : MonoBehaviour
     [SerializeField] private float _stunnedTime = 1;
     [SerializeField] private Sprite[] _sprites;
 
+    [Range(0.1f, 5)]
+    [SerializeField] private float _bounceForce;
+
     private float _lastJumpAt;
     private float _lastDashAt;
     private float _currentStunTime;
@@ -60,7 +63,7 @@ public class TopPlayerScript : MonoBehaviour
                 GetComponentInChildren<SpriteRenderer>().sprite = _sprites[0];
             }
         }
-        else
+        else if (Time.timeScale > 0.1f)
         {
             ProcessInput();
         }
@@ -159,7 +162,7 @@ public class TopPlayerScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstacle")
         {
-            _rigidbody.AddForce((transform.position - other.transform.position).normalized * 5, ForceMode2D.Impulse);
+            _rigidbody.AddForce((transform.position - other.transform.position).normalized * _bounceForce, ForceMode2D.Impulse);
             _currentStunTime = 0;
             _stunned = true;
             GetComponentInChildren<SpriteRenderer>().sprite = _sprites[2];

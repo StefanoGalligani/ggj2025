@@ -10,7 +10,7 @@ public class ScoreUIScript : MonoBehaviour
 
     private async Task Start()
     {
-        if (PlayerPrefs.GetInt("Tutorial") == 0) {
+        if (PlayerPrefs.GetInt("tutorial") == 0) {
             await StartGame();
         }
     }

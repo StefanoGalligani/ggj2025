@@ -27,6 +27,7 @@ public class SnailScript : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale < 0.1f) return;
         if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2"))
         {
             Vector2 newTargetPosition = _camera.ScreenToWorldPoint(Input.mousePosition);
