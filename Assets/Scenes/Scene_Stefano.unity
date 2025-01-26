@@ -151,7 +151,7 @@ MonoBehaviour:
   _topText: {fileID: 1606722151}
   _bottomText: {fileID: 166701098}
   _timerText: {fileID: 1915169786}
-  _timerSec: 60
+  _timerSec: 90
 --- !u!4 &126199087
 Transform:
   m_ObjectHideFlags: 0
@@ -6647,6 +6647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3909579401888853079, guid: a6645aaf3428a6443ae36dfbd3d6cb0d, type: 3}
+      propertyPath: _movementSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4965868536644684843, guid: a6645aaf3428a6443ae36dfbd3d6cb0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7420,7 +7424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: 2950.46}
+  m_AnchoredPosition: {x: -0.000061035, y: 2597.6}
   m_SizeDelta: {x: 800, y: 681.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915169786
