@@ -8,7 +8,7 @@ public abstract class AbstractBubble : MonoBehaviour
     [SerializeField] private Vector2 _targetYVelocityRange;
 
     [Range(1.5f, 5f)]
-    [SerializeField] protected float _trapBubbleScale = 1.5f;
+    [SerializeField] protected float _trapBubbleScale = 2f;
 
     private void Awake()
     {

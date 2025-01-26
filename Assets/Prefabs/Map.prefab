@@ -1226,6 +1226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBottom: 0
+  _topText: {fileID: 0}
+  _bottomText: {fileID: 0}
 --- !u!1 &4438336964417094362
 GameObject:
   m_ObjectHideFlags: 0
