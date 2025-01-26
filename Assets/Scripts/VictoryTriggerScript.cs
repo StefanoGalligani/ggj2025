@@ -1,15 +1,29 @@
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class VictoryTriggerScript : MonoBehaviour
 {
     [SerializeField] private bool isBottom;
+    [SerializeField] private TextMeshProUGUI _topText;
+    [SerializeField] private TextMeshProUGUI _bottomText;
     bool _finished = false;
+
+    private void Start() {
+        _topText.enabled = false;
+        _bottomText.enabled = false;
+    }
 
     private async void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Player" && !_finished) {
             _finished = true;
+            _topText.enabled = true;
+            _bottomText.enabled = true;
+
+            _topText.text = isBottom ? "You Won!" : "You Lost!";
+            _bottomText.text = isBottom ? "You Lost!" : "You Won!";
+
             Time.timeScale = 0;
             if (isBottom) {
                 PlayerPrefs.SetInt("LeftScore", PlayerPrefs.GetInt("LeftScore", 0) + 1);
