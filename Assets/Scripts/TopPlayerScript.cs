@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TopPlayerScript : MonoBehaviour
 {
@@ -60,6 +61,10 @@ public class TopPlayerScript : MonoBehaviour
             ProcessInput();
         }
         _rigidbody.linearVelocityY = Mathf.Clamp(_rigidbody.linearVelocityY, -_terminalVelocity, _terminalVelocity);
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            SceneManager.LoadScene(0);
+        }
     }
 
     async void ProcessInput()

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b6e00783a5a6e4796abc812698b4cf41
+guid: e83fbd7e8e7474e4fb15563494bb050a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5724383675493780380
-    second: Blue Cave Tileset Scaled_0
+      213: 526787686898033636
+    second: Catena_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,15 +40,15 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blue Cave Tileset Scaled_0
+      name: Catena_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 61
         y: 0
-        width: 640
-        height: 896
+        width: 128
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c9b0adfaf98117f40800000000000000
-      internalID: 5724383675493780380
+      spriteID: 4e36b953c968f4700800000000000000
+      internalID: 526787686898033636
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Blue Cave Tileset Scaled_0: 5724383675493780380
+      Catena_0: 526787686898033636
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
