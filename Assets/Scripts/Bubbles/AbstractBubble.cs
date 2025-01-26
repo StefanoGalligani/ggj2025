@@ -7,6 +7,9 @@ public abstract class AbstractBubble : MonoBehaviour
     [SerializeField] protected float _velocity;
     [SerializeField] private Vector2 _targetYVelocityRange;
 
+    [Range(1.5f, 5f)]
+    [SerializeField] protected float _trapBubbleScale = 1.5f;
+
     private void Awake()
     {
         StopAnim();
@@ -33,7 +36,7 @@ public abstract class AbstractBubble : MonoBehaviour
 
     public virtual void EnteredBubble()
     {
-        transform.localScale = Vector2.one * 3;
+        transform.localScale = Vector2.one * _trapBubbleScale;
     }
 
     public async Task ExitedBubble()
