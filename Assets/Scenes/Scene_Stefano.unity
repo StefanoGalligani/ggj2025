@@ -909,6 +909,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1747634320681910416, guid: a6645aaf3428a6443ae36dfbd3d6cb0d, type: 3}
+      propertyPath: m_Mass
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909579401888853079, guid: a6645aaf3428a6443ae36dfbd3d6cb0d, type: 3}
+      propertyPath: _jumpForce
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909579401888853079, guid: a6645aaf3428a6443ae36dfbd3d6cb0d, type: 3}
+      propertyPath: _jumpCooldownSec
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4965868536644684843, guid: a6645aaf3428a6443ae36dfbd3d6cb0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
