@@ -80,7 +80,7 @@ public class TopPlayerScript : MonoBehaviour
     {
         await Movement(
             jump: Input.GetKeyDown(KeyCode.Space),
-            dash: Input.GetKeyDown(KeyCode.LeftControl),
+            dash: Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.LeftAlt),
             movement: Input.GetAxis("Horizontal")
         );
     }
