@@ -20,12 +20,16 @@ public class CannonScript : MonoBehaviour
     {
         _lastShotAt = -_cooldownSec;
         transform.GetChild(0).GetComponent<Animator>().Play("Empty");
+        transform.GetChild(3).gameObject.SetActive(false);
+        transform.GetChild(4).gameObject.SetActive(false);
     }
 
     async Task Update()
     {
         if (_currentLockTime > 0) {
             _currentLockTime -= Time.deltaTime;
+            if (_currentLockTime <= 0) 
+                transform.GetChild(4).gameObject.SetActive(false);
             return;
         }
         Vector2 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
@@ -89,6 +93,7 @@ public class CannonScript : MonoBehaviour
                 break;
             case PowerupType.CannonLock:
                 _currentLockTime = _lockTime;
+                transform.GetChild(4).gameObject.SetActive(true);
                 break;
         }
     }

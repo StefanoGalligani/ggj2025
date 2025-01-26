@@ -11,7 +11,9 @@ public class PowerupSpawnerScript : MonoBehaviour
         if (_counter >= _spawnTime) {
             _counter -= _spawnTime;
             PowerupScript powerup = _powerups[Random.Range(0, _powerups.Length)];
+            Debug.Log(_spawnArea.position);
             Vector3 spawnPos = _spawnArea.position + new Vector3(Random.Range(0, _spawnArea.localScale.x), Random.Range(0, _spawnArea.localScale.y - 1));
+            Debug.Log(spawnPos);
             GameObject.Instantiate(powerup, spawnPos, Quaternion.identity);
         }
     }
