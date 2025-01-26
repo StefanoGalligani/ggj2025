@@ -10,6 +10,12 @@ public class ScoreUIScript : MonoBehaviour
 
     private async Task Start()
     {
+        if (PlayerPrefs.GetInt("Tutorial") == 0) {
+            await StartGame();
+        }
+    }
+
+    public async Task StartGame() {
         _text.text = "Score: " + PlayerPrefs.GetInt(_isRight ? "RightScore" : "LeftScore", 0);
         await Countdown();
     }

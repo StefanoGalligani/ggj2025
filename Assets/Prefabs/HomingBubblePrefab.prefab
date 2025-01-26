@@ -214,6 +214,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.2509804
       objectReference: {fileID: 0}
+    - target: {fileID: 1535378366248249949, guid: da7c71e79f7bcc547af571a069599f24, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1647142751359571495, guid: da7c71e79f7bcc547af571a069599f24, type: 3}
       propertyPath: m_Name
       value: BubbleSprite
