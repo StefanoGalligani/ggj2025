@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -7,11 +8,29 @@ public class VictoryManagerScript : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _topText;
     [SerializeField] private TextMeshProUGUI _bottomText;
+    [SerializeField] private TextMeshProUGUI _timerText;
+
+    [SerializeField] private float _timerSec = 60;
+
+    private float _startTime;
 
     private void Start()
     {
         _topText.enabled = false;
         _bottomText.enabled = false;
+
+        _startTime = Time.time;
+    }
+
+    private void Update()
+    {
+        float deltaTime = Time.time - _startTime;
+        _timerText.text = Math.Ceiling(_timerSec - deltaTime).ToString();
+
+        if (deltaTime >= _timerSec)
+        {
+            EndGame(false);
+        }
     }
 
     public async void EndGame(bool isBottom)
@@ -37,6 +56,8 @@ public class VictoryManagerScript : MonoBehaviour
 
     private async Task RestartGame()
     {
+        _startTime = Time.time;
+
         await Task.Delay(1000);
         Time.timeScale = 1;
         SceneManager.LoadScene(1);
