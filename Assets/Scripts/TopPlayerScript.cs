@@ -37,6 +37,8 @@ public class TopPlayerScript : MonoBehaviour
 
     [Range(0.1f, 5)]
     [SerializeField] private float _bounceForce;
+    [SerializeField] private AudioClip _bounceClip;
+    [SerializeField] private AudioClip _bubbleClip;
 
     private float _lastJumpAt;
     private float _lastDashAt;
@@ -146,6 +148,8 @@ public class TopPlayerScript : MonoBehaviour
         Struggles++;
         if (Struggles < 4) return;
 
+        GetComponent<AudioSource>().PlayOneShot(_bubbleClip);
+
         _rigidbody.bodyType = RigidbodyType2D.Dynamic;
         _rigidbody.linearVelocity = Vector2.zero;
 
@@ -162,6 +166,7 @@ public class TopPlayerScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstacle")
         {
+            GetComponent<AudioSource>().PlayOneShot(_bounceClip);
             _rigidbody.AddForce((transform.position - other.transform.position).normalized * _bounceForce, ForceMode2D.Impulse);
             _currentStunTime = 0;
             _stunned = true;
